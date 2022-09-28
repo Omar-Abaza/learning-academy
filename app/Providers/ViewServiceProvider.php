@@ -20,6 +20,11 @@ class ViewServiceProvider extends ServiceProvider
             $view->with("setting",Setting::select("logo","favicon")->first());
 
         });
+
+        view()->composer("front.inc.footer",function($view){
+            $view->with("setting",Setting::first());
+
+        });
     }
 
     /**

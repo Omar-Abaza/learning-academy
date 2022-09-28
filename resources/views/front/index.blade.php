@@ -105,7 +105,7 @@
     <!--::blog_part end::-->
 
     <!--::review_part start::-->
-    <section class="testimonial_part">
+    <section class="testimonial_part padding_top">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-5">
