@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('site_contents', function (Blueprint $table) {
             $table->id();
+            $table->string("name");
+            $table->text("content");
             $table->timestamps();
         });
     }

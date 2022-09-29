@@ -19,6 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomePageController::class,"index"])->name("front.homepage");
 Route::get('/cat/{id}',[CourseController::class,"cat"])->name("front.cat");
 Route::get('/cat/{id}/course/{c_id}',[CourseController::class,"show"])->name("front.show");
-Route::get('/contact',[ContactController::class,"index"])->name("front.index");
+Route::get('/contact',[ContactController::class,"contact"])->name("front.contact");
 
 

@@ -8,14 +8,9 @@
                 <div class="col-lg-6 col-xl-6">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                            <h5>Every child yearns to learn</h5>
-                            <h1>Making Your Childs
-                                World Better</h1>
-                            <p>Replenish seasons may male hath fruit beast were seas saw you arrie said man beast whales
-                                his void unto last session for bite. Set have great you'll male grass yielding yielding
-                                man</p>
-                            <a href="#" class="btn_1">View Course </a>
-                            <a href="#" class="btn_2">Get Started </a>
+                            <h5>{{ json_decode($banner_title->content)->title }}</h5>
+                            <h1>{{ json_decode($banner_title->content)->sub_title }}</h1>
+                            <p>{{ json_decode($banner_title->content)->desc }}</p>
                         </div>
                     </div>
                 </div>
@@ -57,8 +52,8 @@
             <div class="row justify-content-center">
                 <div class="col-xl-5">
                     <div class="section_tittle text-center">
-                        <p>popular courses</p>
-                        <h2>Special Courses</h2>
+                        <p>{{ json_decode($course_title->content)->title }}</p>
+                        <h2>{{ json_decode($course_title->content)->sub_title }}</h2>
                     </div>
                 </div>
             </div>
@@ -68,33 +63,24 @@
                         <div class="single_special_cource">
                             <img src="{{ asset("storage/courses/$course->image") }}" class="special_img" alt="">
                             <div class="special_cource_text">
-                                <a href="course-details.html" class="btn_4">{{ $course->category->name }}</a>
+                                <a href="{{ route('front.cat', $course->category->id) }}"
+                                    class="btn_4">{{ $course->category->name }}</a>
                                 <h4>${{ $course->price }}</h4>
-                                <a href="course-details.html">
+                                <a href="{{ route('front.show', [$course->category->id, $course->id]) }}">
                                     <h3>{{ $course->name }}</h3>
                                 </a>
                                 <p>{{ $course->small_desc }}</p>
                                 <div class="author_info">
                                     <div class="author_img">
-                                        <img src="{{ asset('storage/trainers') . '/' . $course->trainer->image }}" alt="">
+                                        <img src="{{ asset('storage/trainers') . '/' . $course->trainer->image }}"
+                                            alt="">
                                         <div class="author_info_text">
                                             <p>Conduct by:</p>
-                                            <h5><a href="#">{{ $course->trainer->name }}</a></h5>
+                                            <h5>{{ $course->trainer->name }}</h5>
                                         </div>
                                     </div>
-                                    {{-- <div class="author_rating">
-                                <div class="rating">
-                                    <a href="#"><img src="{{asset("front/img")}}/icon/color_star.svg" alt=""></a>
-                                    <a href="#"><img src="{{asset("front/img")}}/icon/color_star.svg" alt=""></a>
-                                    <a href="#"><img src="{{asset("front/img")}}/icon/color_star.svg" alt=""></a>
-                                    <a href="#"><img src="{{asset("front/img")}}/icon/color_star.svg" alt=""></a>
-                                    <a href="#"><img src="{{asset("front/img")}}/icon/star.svg" alt=""></a>
-                                </div>
-                                <p>3.8 Ratings</p>
-                            </div> --}}
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 @endforeach
@@ -110,8 +96,8 @@
             <div class="row justify-content-center">
                 <div class="col-xl-5">
                     <div class="section_tittle text-center">
-                        <p>TESTIMONIALS</p>
-                        <h2>Happy Students</h2>
+                        <p>{{ json_decode($test_title->content)->title }}</p>
+                        <h2>{{ json_decode($test_title->content)->sub_title }}</h2>
                     </div>
                 </div>
             </div>
